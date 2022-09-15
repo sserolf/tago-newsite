@@ -17,13 +17,13 @@
       "Fun Club": "01 OCTOBER 2022"
     },
     "gig3": {
-      "Sala Even": "15 FEBRUARY 2023"
+      "Sala Even": "17 FEBRUARY 2023"
     }
   },
   "spotify_title_text": "SPOTIFY",
   "spotify_iframe": {
     "style": "border-radius:12px",
-    "src": "https://open.spotify.com/embed/artist/4jccI25PqKPNcD95vHMpaS?utm_source=generator",
+    "src": "https://open.spotify.com/embed/album/1Ql3WrilBgpwBpSw8etKy5?utm_source=generator",
     "width": "100%",
     "height": "80",
     "frameBorder": "0",
@@ -33,18 +33,16 @@
   },
   "news_title_text": "NEWS",
   "news_content": {
-    "myway": "22/07/2022 - Second single \"My Way\" release||Argo der my way. You can listen to My Way on our music section, or find it in Spotify. Check it out!||myway.jpeg",
-    "freedom": "10/06/2022 - First single \"Freedom\" release||After a long delay, we have finally published the first single from our upcoming album. You can listen to Freedom on our music section, or find it in Spotify. Check it out!||freedom.png",
+    "album": "16/09/2022 - Album release||At last, we finally released our first album \"Tago Mago\", and we know that you will enjoy the Tagomagic.||tagomagic.jpg", 
+    "myway": "22/07/2022 - Second single \"My Way\" release||After the release of our first single, we want to share with you all another part of our project, this is \"My Way\". You can listen to My Way on our music section, or find it in Spotify and your favorite platform. Check it out!||myway.jpeg",
+    "freedom": "10/06/2022 - First single \"Freedom\" release||After a long delay, we have finally published the first single from our upcoming album. You can listen to Freedom on our music section, or find it in Spotify and your favorite platform. Check it out!||freedom.png",
     "new_record": "20/09/2021 - New record almost finished||We are working in the last touches to finish our first record, which will see the light of day during next year. Stay tuned!||",
     "gig1": "21/02/2020 - Gig at the Hollander (Seville)||We will be playing our first gig along Surya at the Hollander in Seville.||hollander.jpeg"
   },
   "history_title_text": "ANCIENT HISTORY",
-  "history_content": "Tago Mago es una entidad sonora incorpórea e independiente de la cual sus miembros son sólo mensajeros. Surgió de la nada en agosto de 2019, y tras escuchar su llamada, Juanma y Fran deciden responder a ella, para poco más tarde añadir a Samu. El filtro acústico fabricado por estos tres elementos es lo que da forma a las ondas musicales que se desprenden de Tago Mago.||Su debut en directo tiene lugar el 20 de febrero de 2020 en la Sala Holländer, donde compartieron escenario con los jerezanos SURYA, Tras este estreno, la banda se centra en preparar la grabación de su primer LP. Sin embargo, la irrupción de la pandemia sanitaria retrasa sus planes de difusión y no hay noticias del trío hasta junio de 2022, cuando sale un primer sencillo y videoclip, Freedom, al que da continuidad un mes más tarde My Way. Son dos de los ocho cortes que integran un álbum de debut que está anunciado para el 23 de septiembre, el cual ha sido grabado en Sputnik Recording Studio.",
+  "history_content": "In the begining there was the Tagomagic. Aeons after, Tago Mago was born, when its three members heeded the call and decided to act. Soon after, the songs which would comprise their first album were born, channeled from the tagomagish source through the filter of their heads. Birthed in Seville's Sputnik studios, this first effort is a faithful representation of pure Tagomagic. \"Freedom\", their first single, is a good example of it.",
   "contact_title_text": "CONTACT",
   "ul_contact": {
-    "mail1": {
-      "Mail:": "contact@tagomagoband.com||mailto:contact@tagomagoband.com"
-    },
     "mail2": {
       "Mail:": "tagomagoband@gmail.com||mailto:tagomagoband@gmail.com"
     },

@@ -1,7 +1,7 @@
 {
   "body": "background-image: url('laberinto.png');",
   "navPage_gigs_link": "CONCIERTOS",
-  "navPage_spotify_link": "TEMITAS",
+  "navPage_spotify_link": "SPOTIFY",
   "navPage_news_link": "NOTICIAS",
   "navPage_history_link": "HISTORIA",
   "navPage_contact_link": "CONTACTO",
@@ -11,19 +11,19 @@
   "gigs_title_text": "CONCIERTOS",
   "ul_gigs": {
     "gig1": {
-      "Vackstage": "25 SEPTEMBER 2022"
+      "Vackstage": "25 SEPTIEMBRE 2022"
     },
     "gig2": {
-      "Fun Club": "01 OCTOBER 2022"
+      "Fun Club": "01 OCTUBRE 2022"
     },
     "gig3": {
-      "Sala Even": "15 FEBRUARY 2023"
+      "Sala Even": "17 FEBRERO 2023"
     }
   },
-  "spotify_title_text": "TEMITAS",
+  "spotify_title_text": "SPOTIFY",
   "spotify_iframe": {
     "style": "border-radius:12px",
-    "src": "https://open.spotify.com/embed/artist/4jccI25PqKPNcD95vHMpaS?utm_source=generator",
+    "src": "https://open.spotify.com/embed/album/1Ql3WrilBgpwBpSw8etKy5?utm_source=generator",
     "width": "100%",
     "height": "80",
     "frameBorder": "0",
@@ -33,18 +33,16 @@
   },
   "news_title_text": "NOTICIAS",
   "news_content": {
-    "myway": "22/07/2022 - Second single \"My Way\" release||Argo der my way. You can listen to My Way on our music section, or find it in Spotify. Check it out!||myway.jpeg",
-    "freedom": "10/06/2022 - First single \"Freedom\" release||After a long delay, we have finally published the first single from our upcoming album. You can listen to Freedom on our music section, or find it in Spotify. Check it out!||freedom.png",
-    "new_record": "20/09/2021 - New record almost finished||We are working in the last touches to finish our first record, which will see the light of day during next year. Stay tuned!||",
-    "gig1": "21/02/2020 - Gig at the Hollander (Seville)||We will be playing our first gig along Surya at the Hollander in Seville.||hollander.jpeg"
+    "album": "16/09/2022 - Lanzamiento del álbum||Finalmente hemos lanzado nuestro primer álbum \"Tago Mago\", y sabemos que disfrutarás la Tagomagia.||tagomagic.jpg", 
+    "myway": "22/07/2022 - Lanzamiento del segundo single, \"My Way\"||Después del lanzamiento de nuestro primer single, queremos compartir con vosotros otra parte de nuestro proyecto, esto es \"My Way\". Puedes escuchar My Way en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||myway.jpeg",
+    "freedom": "10/06/2022 - Primer single \"Freedom\"||Después de un largo retraso, hemos publicado el primer single de nuestro próximo álbum. Puedes escuchar Freedom en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||freedom.png",
+    "new_record": "20/09/2021 - La grabación casi ha terminado||Estamos trabajando en finalizar los detalles de nuestro primer trabajo, que verá la luz del día a partir del año que viene. Stay tuned!||",
+    "gig1": "21/02/2020 - Concierto en la Sala Hollander (Sevilla)||Estaremos tocando en nuestro primer concierto juntp a Surya en la Sala Hollander en Sevilla.||hollander.jpeg"
   },
-  "history_title_text": "HISTORIA WAPA",
+  "history_title_text": "HISTORIA",
   "history_content": "Tago Mago es una entidad sonora incorpórea e independiente de la cual sus miembros son sólo mensajeros. Surgió de la nada en agosto de 2019, y tras escuchar su llamada, Juanma y Fran deciden responder a ella, para poco más tarde añadir a Samu. El filtro acústico fabricado por estos tres elementos es lo que da forma a las ondas musicales que se desprenden de Tago Mago.||Su debut en directo tiene lugar el 20 de febrero de 2020 en la Sala Holländer, donde compartieron escenario con los jerezanos SURYA, Tras este estreno, la banda se centra en preparar la grabación de su primer LP. Sin embargo, la irrupción de la pandemia sanitaria retrasa sus planes de difusión y no hay noticias del trío hasta junio de 2022, cuando sale un primer sencillo y videoclip, Freedom, al que da continuidad un mes más tarde My Way. Son dos de los ocho cortes que integran un álbum de debut que está anunciado para el 23 de septiembre, el cual ha sido grabado en Sputnik Recording Studio.",
   "contact_title_text": "CONTACTO",
   "ul_contact": {
-    "mail1": {
-      "Mail:": "contact@tagomagoband.com||mailto:contact@tagomagoband.com"
-    },
     "mail2": {
       "Mail:": "tagomagoband@gmail.com||mailto:tagomagoband@gmail.com"
     },

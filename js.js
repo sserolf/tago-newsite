@@ -84,16 +84,16 @@ window.onload = () => {
   }
 
   yt_video.onclick = () => {
-    alert('tus muertos!');
+    window.open('https://www.youtube.com/channel/UCTUvdlbnJ0Yr1MISJ23xjeg');
   }
   yt.onclick = () => {
-    alert('tus muertos!');
+    window.open('https://music.youtube.com/channel/UC9mp0A_fqHokuN4m7T7kV-A?feature=share');
   }
   spoti.onclick = () => {
-    alert('tus muertos!');
+    window.open('https://open.spotify.com/artist/4jccI25PqKPNcD95vHMpaS?si=tw2A6SfvS0y_QY45Mq-aRg');
   }
   apple.onclick = () => {
-    alert('tus muertos!');
+    window.open('https://music.apple.com/es/artist/tago-mago/1629387378');
   }
 
   // LANGUAGE
