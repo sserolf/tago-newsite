@@ -257,7 +257,11 @@ window.onload = () => {
               span1 = document.createElement('span');
               span1.innerText = key1;
             }
-            span1.classList.add('left')
+            if (ulId == 'gigs') {
+              span1.classList.add('leftGig');
+            } else {
+              span1.classList.add('left');
+            }
             let span2;
             if (value1.indexOf('||') > -1) {
               span2 = document.createElement('a');
@@ -269,7 +273,11 @@ window.onload = () => {
               span2 = document.createElement('span');
               span2.innerText = value1;
             }
-            span2.classList.add('right')
+            if (ulId == 'gigs') {
+              span2.classList.add('rightGig');
+            } else {
+              span2.classList.add('right');
+            }
             li.appendChild(span1);
             li.appendChild(span2);
             ul.appendChild(li);

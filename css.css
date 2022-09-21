@@ -22,7 +22,7 @@ body {
   overflow: hidden;
   margin: 0;
   font-family: monospace;
-  font-size: 17px;
+  font-size: 15px;
   -webkit-animation: backgroundAnimation 60s infinite;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .copy {
-  background-color: gray;
+  background-color: whitesmoke;
   bottom: 0;
   /* display: block;
   float: left; */
@@ -125,6 +125,12 @@ html {
 .left {
   display: block;
   float: left;
+}
+
+.leftGig {
+  display: block;
+  float: left;
+  width: 50%;
 }
 
 .logo {
@@ -224,6 +230,12 @@ html {
   float: right;
 }
 
+.rightGig {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
 .sections {
   background-color: rgb(255 255 255 / 80%);
   border-radius: 10px;
@@ -273,7 +285,7 @@ html {
 }
 
 .social {
-  background-color: white;
+  background-color: whitesmoke;
   border-top: 1px solid rgb(50 50 50);
   bottom: 20;
   height: 70px;
@@ -305,18 +317,22 @@ html {
     width: calc(800px - 40px);
   }
 
-  .sections > ul {
-    float: none;
-    margin: 1em auto;
-    width: 50%;
-  }
-
   #loading > img {
     display: block;
     height: 825px;
     margin: 0 auto;
     padding: 0;
     width: 825px;
+  }
+
+  .nav-page-active {
+    width: 30%;
+  }
+
+  .sections > ul {
+    float: none;
+    margin: 1em auto;
+    width: 50%;
   }
 }
 
