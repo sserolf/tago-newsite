@@ -10,12 +10,15 @@
   "gigs_title_text": "GIGS",
   "ul_gigs": {
     "gig1": {
-      "Vackstage": "25 SEPTEMBER 2022"
+      "Vackstage||https://vackstage.com/event/tago-mago-c98": "25 SEPTEMBER 2022"
     },
     "gig2": {
       "Fun Club": "01 OCTOBER 2022"
     },
     "gig3": {
+      "Sala Fanatik": "27 NOVEMBER 2022"
+    },
+    "gig4": {
       "Sala Even": "17 FEBRUARY 2023"
     }
   },

@@ -92,7 +92,14 @@ body {
 }
 
 #gigs > ul > li > a {
-  font-size: 17px;
+  font-size: 15px;
+}
+
+#gigs > ul > li:first-child {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 0 10px 0;
 }
 
 #history > h1 {
@@ -225,6 +232,11 @@ html {
   width: calc(100% - 70px);
 }
 
+#news > div > p > a {
+  text-decoration: underline;
+  color: blue;
+}
+
 .right {
   display: block;
   float: right;
@@ -266,9 +278,11 @@ html {
   width: 100%;
 }
 
-.sections > p, #news > div > p, #history > div > p {
+.sections > p, #news > div > p, #news > div > p > a, #history > div > p {
   margin-block-start: 0;
   text-align: justify;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 .sections > ul {
@@ -306,6 +320,13 @@ html {
 
 .titles {
   text-align: center;
+}
+
+#pastGigsContainer {
+  width: calc(100% - 20px);
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: lightgrey;
 }
 
 @media only screen and (min-width: 800px) {

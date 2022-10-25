@@ -112,12 +112,14 @@ window.onload = () => {
   const changeLanguage = () => {
     showLoading();
     const gigsContainer = document.getElementById('gigsContainer');
+    const pastGigsContainer = document.getElementById('pastGigsContainer');
     const spotifyContainer = document.getElementById('spotifyIframe');
     const newsContainer = document.getElementById('newsContainer');
     const historyContainer = document.getElementById('historyContainer');
     const contactContainer = document.getElementById('contactContainer');
   
     gigsContainer ? gigsContainer.remove() : null;
+    pastGigsContainer ? pastGigsContainer.remove() : null;
     spotifyContainer ? spotifyContainer.remove() : null;
     newsContainer ? newsContainer.remove() : null;
     historyContainer ? historyContainer.remove() : null;
@@ -158,6 +160,15 @@ window.onload = () => {
   changeLanguage();
 
   const changeLanguageValues = (template) => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      changeES.innerText = '🇪🇸';
+      changeEN.innerText = '🇬🇧';
+    } else {
+      changeES.innerText = 'ES';
+      changeEN.innerText = 'EN';
+    }
+
     Object.entries(template).forEach(entry => {
       const [key, value] = entry;
       if (key.indexOf('body') > -1) {
@@ -176,7 +187,7 @@ window.onload = () => {
             container.appendChild(newsTitle);
             for (let index = 1; index < contentValue.split('||').length - 1; index++) {
               let newsContent = document.createElement('p');
-              newsContent.innerText = contentValue.split('||')[index];
+              newsContent.innerHTML = contentValue.split('||')[index];
               container.appendChild(newsContent);
             }
             const lastValue = contentValue.split('||')[contentValue.split('||').length - 1];
@@ -240,6 +251,9 @@ window.onload = () => {
       if (key.indexOf('ul_') > -1) {
         const ulId = key.split('ul_')[1];
         const ul = document.createElement('ul');
+        const ulPastGigs = document.createElement('ul');
+        ul.setAttribute('id', ulId + 'Container');
+        ulPastGigs.setAttribute('id', 'pastGigsContainer');
         let li;
         Object.entries(value).forEach(ulEntry => {
           const [ulKey, ulValue] = ulEntry;
@@ -280,11 +294,27 @@ window.onload = () => {
             }
             li.appendChild(span1);
             li.appendChild(span2);
-            ul.appendChild(li);
+            if (ulId == 'gigs' && new Date(value1) < new Date()) {
+              ulPastGigs.prepend(li);
+            } else {
+              ul.appendChild(li);
+            }
           });
         });
-        ul.setAttribute('id', ulId + 'Container');
-        document.getElementById(ulId).appendChild(ul);
+        if (ulId == 'gigs') {
+          const ulTitle = document.createElement('li');
+          ulTitle.classList.add('ulTitle');
+          ulTitle.innerHTML = language.toLowerCase() == 'es' ? 'Próximos Conciertos'.toUpperCase() : 'Upcoming Gigs'.toUpperCase();
+          const ulPastTitle = document.createElement('li');
+          ulPastTitle.classList.add('ulTitle');
+          ulPastTitle.innerHTML = language.toLowerCase() == 'es' ? 'Conciertos Anteriores'.toUpperCase() : 'Past Gigs'.toUpperCase();
+          ul.prepend(ulTitle);
+          ulPastGigs.prepend(ulPastTitle);
+          document.getElementById(ulId).appendChild(ul);
+          document.getElementById(ulId).appendChild(ulPastGigs)
+        } else {
+          document.getElementById(ulId).appendChild(ul);
+        }
       }
     });
     
