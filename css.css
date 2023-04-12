@@ -332,7 +332,7 @@ html {
 #gigsContainer {
   width: calc(100% - 20px);
   border-radius: 10px;
-  padding: 10px 10px;
+  padding: 0 10px;
   text-align: center;
   width: calc(100% - 20px);
 }
