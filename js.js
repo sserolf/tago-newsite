@@ -160,7 +160,7 @@ window.onload = () => {
   changeLanguage();
 
   const changeLanguageValues = (template) => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const isMobile = /iPhone|iPad|iPod|Android|Mac|MAC/i.test(navigator.userAgent);
     if (isMobile) {
       changeES.innerText = '🇪🇸';
       changeEN.innerText = '🇬🇧';
@@ -202,20 +202,16 @@ window.onload = () => {
             }
           });
         } else {
-          for (let index = 0; index < value.split('||').length - 1; index++) {
-            let historyContent = document.createElement('p');
-            historyContent.innerText = value.split('||')[index];
-            container.appendChild(historyContent);
-          }
-          const lastValue = value.split('||')[value.split('||').length - 1];
-          if (lastValue && (lastValue.indexOf('jpg') > -1 || lastValue.indexOf('jpeg') > -1 || lastValue.indexOf('png') > -1 || lastValue.indexOf('gif') > -1)) {
-            let historyImg = document.createElement('img');
-            historyImg.src = lastValue;
-            container.appendChild(historyImg);
-          } else {
-            let historyContent = document.createElement('p');
-            historyContent.innerText = lastValue;
-            container.appendChild(historyContent);
+          for (let index = 0; index < value.split('||').length; index++) {
+            if (value.split('||')[index].toLowerCase().indexOf('jpg') > -1 || value.split('||')[index].toLowerCase().indexOf('jpeg') > -1 || value.split('||')[index].toLowerCase().indexOf('png') > -1 || value.split('||')[index].toLowerCase().indexOf('gif') > -1) {
+              let historyImg = document.createElement('img');
+              historyImg.src = value.split('||')[index];
+              container.appendChild(historyImg);
+            } else {
+              let historyContent = document.createElement('p');
+              historyContent.innerText = value.split('||')[index];
+              container.appendChild(historyContent);
+            }
           }
         }
         container.setAttribute('id', contentId + 'Container');
@@ -288,7 +284,12 @@ window.onload = () => {
               span2.innerText = value1;
             }
             if (ulId == 'gigs') {
-              span2.classList.add('rightGig');
+              span2.classList.add('rightGig');new Date('27 NOVEMBER 2022').getDate()
+              if (new Date(value1) < new Date()) {
+                const day = new Date(span2.innerText).getDate().toString().length > 1 ? new Date(span2.innerText).getDate() : '0' + new Date(span2.innerText).getDate();
+                const month = new Date(span2.innerText).getMonth().toString().length > 1 ? new Date(span2.innerText).getMonth() : '0' + new Date(span2.innerText).getMonth();
+                span2.innerText = day + '/' + month + '/' + new Date(span2.innerText).getFullYear();
+              }
             } else {
               span2.classList.add('right');
             }
@@ -308,10 +309,10 @@ window.onload = () => {
           const ulPastTitle = document.createElement('li');
           ulPastTitle.classList.add('ulTitle');
           ulPastTitle.innerHTML = language.toLowerCase() == 'es' ? 'Conciertos Anteriores'.toUpperCase() : 'Past Gigs'.toUpperCase();
-          ul.prepend(ulTitle);
+          ul.children.length > 1 ? ul.prepend(ulTitle) : null;
           ulPastGigs.prepend(ulPastTitle);
           document.getElementById(ulId).appendChild(ul);
-          document.getElementById(ulId).appendChild(ulPastGigs)
+          ulPastGigs.children.length > 1 ? document.getElementById(ulId).appendChild(ulPastGigs) : null;
         } else {
           document.getElementById(ulId).appendChild(ul);
         }

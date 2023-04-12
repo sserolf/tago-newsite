@@ -95,12 +95,12 @@ body {
   font-size: 15px;
 }
 
-#gigs > ul > li:first-child {
+/* #gigs > ul > li:first-child {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   padding: 0 0 10px 0;
-}
+} */
 
 #history > h1 {
   margin-bottom: 20px;
@@ -272,7 +272,7 @@ html {
   margin-bottom: 10px;
 }
 
-.sections > img, #news > div > img {
+.sections > img, #news > div > img, #history > div > img {
   border: 0.5px solid black;
   margin-bottom: 20px;
   width: 100%;
@@ -322,11 +322,28 @@ html {
   text-align: center;
 }
 
+.ulTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 0 10px 0;
+}
+
+#gigsContainer {
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  width: calc(100% - 20px);
+}
+
 #pastGigsContainer {
   width: calc(100% - 20px);
-  padding: 10px 10px;
   border-radius: 10px;
   background-color: lightgrey;
+  padding: 10px 10px;
+  text-align: center;
+  width: calc(100% - 20px);
 }
 
 @media only screen and (min-width: 800px) {
@@ -350,11 +367,6 @@ html {
     width: 30%;
   }
 
-  .sections > ul {
-    float: none;
-    margin: 1em auto;
-    width: 50%;
-  }
 }
 
 @keyframes backgroundAnimation
