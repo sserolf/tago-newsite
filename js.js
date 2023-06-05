@@ -284,10 +284,10 @@ window.onload = () => {
               span2.innerText = value1;
             }
             if (ulId == 'gigs') {
-              span2.classList.add('rightGig');new Date('27 NOVEMBER 2022').getDate()
+              span2.classList.add('rightGig');
               if (new Date(value1) < new Date()) {
                 const day = new Date(span2.innerText).getDate().toString().length > 1 ? new Date(span2.innerText).getDate() : '0' + new Date(span2.innerText).getDate();
-                const month = new Date(span2.innerText).getMonth().toString().length > 1 ? new Date(span2.innerText).getMonth() : '0' + new Date(span2.innerText).getMonth();
+                const month = new Date(span2.innerText).getMonth().toString().length > 1 ? new Date(span2.innerText).getMonth() + 1 : '0' + new Date(span2.innerText).getMonth() + 1;
                 span2.innerText = day + '/' + month + '/' + new Date(span2.innerText).getFullYear();
               }
             } else {
