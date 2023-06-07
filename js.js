@@ -309,7 +309,7 @@ window.onload = () => {
           const ulPastTitle = document.createElement('li');
           ulPastTitle.classList.add('ulTitle');
           ulPastTitle.innerHTML = language.toLowerCase() == 'es' ? 'Conciertos Anteriores'.toUpperCase() : 'Past Gigs'.toUpperCase();
-          ul.children.length > 1 ? ul.prepend(ulTitle) : null;
+          ul.children.length >= 1 ? ul.prepend(ulTitle) : null;
           ulPastGigs.prepend(ulPastTitle);
           document.getElementById(ulId).appendChild(ul);
           ulPastGigs.children.length > 1 ? document.getElementById(ulId).appendChild(ulPastGigs) : null;
