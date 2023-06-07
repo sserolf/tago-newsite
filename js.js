@@ -320,6 +320,15 @@ window.onload = () => {
     });
     
   }
+
+  FB.api(
+    '/17841460325620436',
+    'GET',
+    {"fields":"business_discovery.username(bleemband){media{caption,timestampmedia_type,media_url,children{media_url}}}","access_token":"EAAVXIL0flZBYBAK3g4eokodgGW9aJNBO85lVctD8BzAp7ZCZCSpRbpspU8RQ1QeZAWQdqUJD1Ib1KShqrZBupwgJC2iZCMmviHGpgskVAWuRWO4CYAJImNncFlO7T7qARD0uEBSHHJ2D7iHjZBfH0i117HgNmEYVZCcpqUFCHCgqqbiJ4sfaZARDg5J1nlKz0X3FCmdElqfCgGvRRLy0vTZBp7"},
+    function(response) {
+        console.log(response);
+    }
+  );
 }
 
 const showLoading = () => {
