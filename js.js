@@ -15,6 +15,12 @@ let language;
 let loading;
 let loadingImg;
 let flags;
+let posts = [];
+let pendingPosts = [];
+let postsToUse = [];
+let allPosts = 0;
+let postsCounter = 0;
+let oldPostsCounter = 0;
 
 window.onload = () => {
   // INITIALIZE VARIABLES
@@ -117,6 +123,8 @@ window.onload = () => {
     const newsContainer = document.getElementById('newsContainer');
     const historyContainer = document.getElementById('historyContainer');
     const contactContainer = document.getElementById('contactContainer');
+    const moreNews_remove = document.getElementById('moreNews_text');
+    const resetNews_remove = document.getElementById('resetNews_text');
   
     gigsContainer ? gigsContainer.remove() : null;
     pastGigsContainer ? pastGigsContainer.remove() : null;
@@ -124,6 +132,9 @@ window.onload = () => {
     newsContainer ? newsContainer.remove() : null;
     historyContainer ? historyContainer.remove() : null;
     contactContainer ? contactContainer.remove() : null;
+    moreNews_remove ? moreNews_remove.remove() : null;
+    resetNews_remove ? resetNews_remove.remove() : null;
+
     language = document.cookie.split('language=')[1];
     if (language) {
       getJson(language);
@@ -180,27 +191,7 @@ window.onload = () => {
         let contentIdContainer = document.getElementById(contentId);
         let container = document.createElement('div');
         if (typeof(value) == 'object') {
-          Object.entries(value).forEach(contentEntry => {
-            const [contentKey, contentValue] = contentEntry;
-            let newsTitle = document.createElement('h3');
-            newsTitle.innerText = contentValue.split('||')[0];
-            container.appendChild(newsTitle);
-            for (let index = 1; index < contentValue.split('||').length - 1; index++) {
-              let newsContent = document.createElement('p');
-              newsContent.innerHTML = contentValue.split('||')[index];
-              container.appendChild(newsContent);
-            }
-            const lastValue = contentValue.split('||')[contentValue.split('||').length - 1];
-            if (lastValue.indexOf('jpg') > -1 || lastValue.indexOf('jpeg') > -1 || lastValue.indexOf('png') > -1 || lastValue.indexOf('gif') > -1) {
-              let newsImg = document.createElement('img');
-              newsImg.src = lastValue;
-              container.appendChild(newsImg);
-            } else {
-              let newsContent = document.createElement('p');
-              newsContent.innerText = lastValue;
-              container.appendChild(newsContent);
-            }
-          });
+          addNews(value, container);
         } else {
           for (let index = 0; index < value.split('||').length; index++) {
             if (value.split('||')[index].toLowerCase().indexOf('jpg') > -1 || value.split('||')[index].toLowerCase().indexOf('jpeg') > -1 || value.split('||')[index].toLowerCase().indexOf('png') > -1 || value.split('||')[index].toLowerCase().indexOf('gif') > -1) {
@@ -216,6 +207,24 @@ window.onload = () => {
         }
         container.setAttribute('id', contentId + 'Container');
         contentIdContainer.appendChild(container);
+        if (contentId == 'news') {
+          postsCounter = 0;
+          pendingPosts = [];        
+          posts.length == oldPostsCounter ? callFBApi(posts) : showAllNews(posts);
+          let moreNews_button = document.createElement('button');
+          let resetNews_button = document.createElement('button');
+          moreNews_button.onclick = () => {
+            showAllNews(posts);
+          }
+          moreNews_button.id = 'moreNews_text';
+          resetNews_button.onclick = () => {
+            resetNews();
+          }
+          resetNews_button.style.display = 'none';
+          resetNews_button.id = 'resetNews_text';
+          contentIdContainer.appendChild(moreNews_button);
+          contentIdContainer.appendChild(resetNews_button);
+        }
       }
 
       if (key.indexOf('iframe') > -1) {
@@ -321,14 +330,101 @@ window.onload = () => {
     
   }
 
-  FB.api(
-    '/17841460325620436',
-    'GET',
-    {"fields":"business_discovery.username(bleemband){media{caption,timestampmedia_type,media_url,children{media_url}}}","access_token":"EAAVXIL0flZBYBAK3g4eokodgGW9aJNBO85lVctD8BzAp7ZCZCSpRbpspU8RQ1QeZAWQdqUJD1Ib1KShqrZBupwgJC2iZCMmviHGpgskVAWuRWO4CYAJImNncFlO7T7qARD0uEBSHHJ2D7iHjZBfH0i117HgNmEYVZCcpqUFCHCgqqbiJ4sfaZARDg5J1nlKz0X3FCmdElqfCgGvRRLy0vTZBp7"},
-    function(response) {
-        console.log(response);
+}
+
+const addNews = (value, container) => {
+  posts = [];
+  oldPostsCounter = 0;
+  Object.entries(value).forEach(contentEntry => {
+    const [contentKey, contentValue] = contentEntry;
+    posts.push({
+      'time': contentValue.split('||')[0].split(' ')[0],
+      'caption': contentValue.split('||')[1],
+      'media': contentValue.split('||')[contentValue.split('||').length - 1].indexOf('jpg') || contentValue.split('||')[contentValue.split('||').length - 1].indexOf('jpeg') || contentValue.split('||')[contentValue.split('||').length - 1].indexOf('png') || contentValue.split('||')[contentValue.split('||').length - 1].indexOf('gif') ? contentValue.split('||')[contentValue.split('||').length - 1] : undefined,
+      'media_type': 'oldPost'
+    })
+    oldPostsCounter++;
+  });
+}
+
+const showAllNews = posts => {
+  if (allPosts != postsCounter) {
+    if (pendingPosts == 0) {
+      for (let i = 0; i < posts.length; i++) {
+        pendingPosts.push(posts[i]);
+      }
     }
-  );
+    postsToUse = [];
+    for (let i = 0; i < 3; i++) {
+      if (pendingPosts[i] != undefined) {
+        postsToUse.push(pendingPosts[i]);
+        postsCounter++;
+      }
+    }
+    pendingPosts.splice(0,3);
+    postsToUse.forEach(post => {
+      let newsTitle = document.createElement('h3');
+      let realTime;
+      if (post.time.length > 10 && post.caption.split('||').length == 1) {
+        const timeToDate = new Date(post.time);
+        const day = timeToDate.getDate().toString().length > 1 ? timeToDate.getDate() : '0' + timeToDate.getDate();
+        const month = (timeToDate.getMonth() + 1).toString().length > 1 ? (timeToDate.getMonth() + 1) : '0' + (timeToDate.getMonth() + 1);
+        realTime = innerText = day + '/' + month + '/' + timeToDate.getFullYear();
+      } else {
+        realTime = post.time;
+      }
+      if (post.media_type != 'oldPost') {
+        realTime = realTime + ' IG Post';
+      }
+      newsTitle.innerText = realTime;
+      newsContainer.appendChild(newsTitle);
+      let realCaption = post.caption.split('\n#')[0];
+      realCaption.split('\n').forEach(newParagraph => {
+        let newsContent = document.createElement('p');
+        newsContent.innerHTML = newParagraph;
+        newsContainer.appendChild(newsContent);
+      })
+      const newsMedia = post.media;
+      if (post.media_type != 'VIDEO') {
+        if (post.media && post.media.length > 0 && typeof(post.media) == 'string') {
+          let newsImg = document.createElement('img');
+          newsImg.src = newsMedia;
+          newsContainer.appendChild(newsImg);
+        } else if (post.media && post.media.length > 0 && typeof(post.media) == 'object') {
+          post.media.forEach(moreMedia => {
+            let newsImg = document.createElement('img');
+            newsImg.src = moreMedia.media_url;
+            newsContainer.appendChild(newsImg);
+          });
+        }
+      } else {
+        let newVid = document.createElement('video');
+        newVid.style = 'width: -webkit-fill-available';
+        newVid.controls = true;
+        let newSrc = document.createElement('source');
+        newSrc.src = newsMedia;
+        newVid.appendChild(newSrc);
+        newsContainer.appendChild(newVid);
+      }
+    });
+    if (allPosts == postsCounter) {
+      document.getElementById('moreNews_text').style.display = 'none';
+    } else if (postsCounter > 3 && document.getElementById('resetNews_text').style.display != 'block' && document.getElementById('resetNews_text').style.display != '' && document.getElementById('resetNews_text').style.display != undefined) {
+      document.getElementById('resetNews_text').style.display = 'block';
+    }
+  } else {
+    // alert('no more');
+  }
+}
+
+const resetNews = () => {
+  newsContainer.innerHTML = '';
+  postsCounter = 0;
+  pendingPosts = [];
+  showAllNews(posts);
+  location.href = '#news';
+  document.getElementById('moreNews_text').style.display = 'block';
+  document.getElementById('resetNews_text').style.display = 'none';
 }
 
 const showLoading = () => {
@@ -358,6 +454,7 @@ const removeLoading = () => {
   const ul = document.getElementById('navPage').firstElementChild;
   ul.style.display = 'block';
   content.style.display = 'block';
+  content.scrollTo(0,0);
   changeES ? changeES.style.display = 'block' : null;
   changeEN ? changeEN.style.display = 'block' : null;
   setTimeout(() => {
@@ -367,6 +464,37 @@ const removeLoading = () => {
       loading.style.display = 'none';
     }, 501);
   }, 500);
+}
+
+const callFBApi = (posts) => {
+  posts = posts;
+  FB.api(
+    '/17841460325620436',
+    'GET',
+    {"fields":"business_discovery.username(tagomagoband){media{caption,timestamp,media_type,media_url,children{media_url}}}","access_token":"EAAVXIL0flZBYBAFmuADX29rRcYygi4uoWBxO2yJbPwDSqhJs0gWTnL8N5q8ZCysUFrEuf99a6ZCxj9jLjKZBMKlfrdEW3otcOjZCZB041J9fgkIacTjgaXJgoPbt8ZBXg0aJGLvCTvNSePI0P4QJZCMlAIob0SF5hKGSXB4t93DBFnrg2ZC1efq8kyJE1qEzrtWsZAb83aEbZByZARRamCl77Er9"},
+    function(response) {
+      let media;
+      if (response.business_discovery) {
+        response.business_discovery.media.data.forEach((element, index) => {
+          media = element.children != undefined ? element.children.data : element.media_url;
+          posts.push({
+            'time': element.timestamp,
+            'caption': element.caption,
+            'media': media,
+            'media_type': element.media_type
+          });
+        });
+      }
+      posts = posts.sort((a, b) => {
+        a = a.time.length == 10 ? new Date(a.time.split('/').reverse().join('/')) : new Date(a.time);
+        b = b.time.length == 10 ? new Date(b.time.split('/').reverse().join('/')) : new Date(b.time);
+        return b - a
+      });
+
+      allPosts = posts.length;
+      showAllNews(posts);
+    }
+  );
 }
 
 document.addEventListener('readystatechange', (event) => {
