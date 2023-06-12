@@ -471,7 +471,7 @@ const callFBApi = (posts) => {
   FB.api(
     '/17841460325620436',
     'GET',
-    {"fields":"business_discovery.username(tagomagoband){media{caption,timestamp,media_type,media_url,children{media_url}}}","access_token":"EAAVXIL0flZBYBAFmuADX29rRcYygi4uoWBxO2yJbPwDSqhJs0gWTnL8N5q8ZCysUFrEuf99a6ZCxj9jLjKZBMKlfrdEW3otcOjZCZB041J9fgkIacTjgaXJgoPbt8ZBXg0aJGLvCTvNSePI0P4QJZCMlAIob0SF5hKGSXB4t93DBFnrg2ZC1efq8kyJE1qEzrtWsZAb83aEbZByZARRamCl77Er9"},
+    {"fields":"business_discovery.username(tagomagoband){media{caption,timestamp,media_type,media_url,children{media_url}}}","access_token":"1503173007087590|pd9elVIpOo_2EKonTpM3GKSFUP8"},
     function(response) {
       let media;
       if (response.business_discovery) {
