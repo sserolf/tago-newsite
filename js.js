@@ -471,19 +471,22 @@ const callFBApi = (posts) => {
   let serverCall = new XMLHttpRequest();
   serverCall.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      const response = JSON.parse(this.responseText);
-      let media;
-      if (response.business_discovery) {
-        response.business_discovery.media.data.forEach((element) => {
-          media = element.children != undefined ? element.children.data : element.media_url;
-          posts.push({
-            'time': element.timestamp,
-            'caption': element.caption,
-            'media': media,
-            'media_type': element.media_type
+      let response = [this.responseText.split('|||')[0], this.responseText.split('|||')[1]];
+      response.forEach(res => {
+        let data = JSON.parse(res);
+        let media;
+        if (data.business_discovery) {
+          data.business_discovery.media.data.forEach((element) => {
+            media = element.children != undefined ? element.children.data : element.media_url;
+            posts.push({
+              'time': element.timestamp,
+              'caption': element.caption,
+              'media': media,
+              'media_type': element.media_type
+            });
           });
-        });
-      }
+        }
+      })
       posts = posts.sort((a, b) => {
         a = a.time.length == 10 ? new Date(a.time.split('/').reverse().join('/')) : new Date(a.time);
         b = b.time.length == 10 ? new Date(b.time.split('/').reverse().join('/')) : new Date(b.time);
