@@ -248,6 +248,11 @@ html {
   color: blue;
 }
 
+#newsContainer>img {
+  border-radius: 9px;
+  border: 0 !important;
+}
+
 .right {
   display: block;
   float: right;
