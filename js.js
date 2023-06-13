@@ -468,14 +468,13 @@ const removeLoading = () => {
 
 const callFBApi = (posts) => {
   posts = posts;
-  FB.api(
-    '/17841460325620436',
-    'GET',
-    {"fields":"business_discovery.username(tagomagoband){media{caption,timestamp,media_type,media_url,children{media_url}}}","access_token":"1503173007087590|pd9elVIpOo_2EKonTpM3GKSFUP8"},
-    function(response) {
+  let serverCall = new XMLHttpRequest();
+  serverCall.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const response = JSON.parse(this.responseText);
       let media;
       if (response.business_discovery) {
-        response.business_discovery.media.data.forEach((element, index) => {
+        response.business_discovery.media.data.forEach((element) => {
           media = element.children != undefined ? element.children.data : element.media_url;
           posts.push({
             'time': element.timestamp,
@@ -494,7 +493,9 @@ const callFBApi = (posts) => {
       allPosts = posts.length;
       showAllNews(posts);
     }
-  );
+  }
+  serverCall.open('GET', 'https://server.tagomagoband.com/getIGPosts/');
+  serverCall.send();
 }
 
 document.addEventListener('readystatechange', (event) => {
