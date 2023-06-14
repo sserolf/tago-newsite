@@ -377,6 +377,14 @@ const showAllNews = posts => {
         realTime = realTime + ' IG Post';
       }
       newsTitle.innerText = realTime;
+      if (post.permalink) {
+        newsTitle.onclick = () => {
+          window.open(post.permalink,'_blank');
+        }
+        newsTitle.onmouseover = newsTitle.style.cursor = 'pointer';
+        newsTitle.style.textDecoration = 'underline';
+        newsTitle.style.color = 'darkblue';
+      }
       newsContainer.appendChild(newsTitle);
       let realCaption = post.caption.split('\n#')[0];
       realCaption.split('\n').forEach(newParagraph => {
@@ -482,7 +490,8 @@ const callFBApi = (posts) => {
               'time': element.timestamp,
               'caption': element.caption,
               'media': media,
-              'media_type': element.media_type
+              'media_type': element.media_type,
+              'permalink': element.permalink
             });
           });
         }
