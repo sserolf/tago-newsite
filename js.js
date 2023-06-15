@@ -407,7 +407,8 @@ const showAllNews = posts => {
         }
       } else {
         let newVid = document.createElement('video');
-        newVid.style = 'width: -webkit-fill-available';
+        newVid.style.width = '-webkit-fill-available';
+        newVid.style.height = '300px';
         newVid.controls = true;
         let newSrc = document.createElement('source');
         newSrc.src = newsMedia;
