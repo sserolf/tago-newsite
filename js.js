@@ -365,7 +365,7 @@ const showAllNews = posts => {
     postsToUse.forEach(post => {
       let newsTitle = document.createElement('h3');
       let realTime;
-      if (post.time.length > 10 && post.caption.split('||').length == 1) {
+      if (post.time.length > 10) {
         const timeToDate = new Date(post.time);
         const day = timeToDate.getDate().toString().length > 1 ? timeToDate.getDate() : '0' + timeToDate.getDate();
         const month = (timeToDate.getMonth() + 1).toString().length > 1 ? (timeToDate.getMonth() + 1) : '0' + (timeToDate.getMonth() + 1);
@@ -386,12 +386,15 @@ const showAllNews = posts => {
         newsTitle.style.color = 'darkblue';
       }
       newsContainer.appendChild(newsTitle);
-      let realCaption = post.caption.split('\n#')[0];
-      realCaption.split('\n').forEach(newParagraph => {
-        let newsContent = document.createElement('p');
-        newsContent.innerHTML = newParagraph;
-        newsContainer.appendChild(newsContent);
-      })
+      let realCaption;
+      if (post.caption) {
+        realCaption = post.caption.split('\n#')[0];
+        realCaption.split('\n').forEach(newParagraph => {
+          let newsContent = document.createElement('p');
+          newsContent.innerHTML = newParagraph;
+          newsContainer.appendChild(newsContent);
+        })
+      }
       const newsMedia = post.media;
       if (post.media_type != 'VIDEO') {
         if (post.media && post.media.length > 0 && typeof(post.media) == 'string') {
