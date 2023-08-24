@@ -4,9 +4,9 @@
   "navPage_news_link": "NEWS",
   "navPage_history_link": "HISTORY",
   "navPage_contact_link": "CONTACT",
-  "menu_img": "menu2.gif",
-  "logo_img": "logo2.png",
-  "fatmusik_img": "fatmusik.gif",
+  "menu_img": "assets/images/menu2.gif",
+  "logo_img": "assets/images/logo2.png",
+  "fatmusik_img": "assets/images/fatmusik.gif",
   "gigs_title_text": "GIGS",
   "ul_gigs": {
     "gig1": {
@@ -50,15 +50,15 @@
   },
   "news_title_text": "NEWS",
   "news_content": {
-    "new-logos": "25/03/2023||We have revamped our old logo to add a bit of color and style to it. What do you think?||new-logos.jpg",
-    "gig4": "15/01/2023||On February the 17th, we will be playing with our pals Bleem at the Even...||concierto-even.jpg",
-    "gig3": "21/11/2022||We will be playing at the Fanatic's Incubadora on January the 29th with Habitantes de Nadie, Southchild and Flxwxrs||concierto-fanatic-incu.jpg",
-    "gig2": "20/09/2022||We will be presenting our new record at the Fun Club the 10th of october - don't miss it!!||concierto-fun.jpg",
-    "album": "16/09/2022 - Album release||At last, we finally released our first album \"Tago Mago\". It's been a long endeavour, and we surely have learned a lot in the process. We are proud of this record, and hope you enjoy listening to it as much as we did making it!||tagomagic.jpg", 
-    "myway": "22/07/2022 - Second single \"My Way\" release||After the release of our first single, we want to share with you all another part of our project, this is \"My Way\". You can listen to My Way on our music section, or find it in Spotify and your favorite platform. Check it out!||myway.jpeg",
-    "freedom": "10/06/2022 - First single \"Freedom\" release||After a long delay, we have finally published the first single from our upcoming album. You can listen to Freedom on our music section, or find it in Spotify and your favorite platform. Check it out!||freedom.png",
+    "new-logos": "25/03/2023||We have revamped our old logo to add a bit of color and style to it. What do you think?||assets/images/new-logos.jpg",
+    "gig4": "15/01/2023||On February the 17th, we will be playing with our pals Bleem at the Even...||assets/images/concierto-even.jpg",
+    "gig3": "21/11/2022||We will be playing at the Fanatic's Incubadora on January the 29th with Habitantes de Nadie, Southchild and Flxwxrs||assets/images/concierto-fanatic-incu.jpg",
+    "gig2": "20/09/2022||We will be presenting our new record at the Fun Club the 10th of october - don't miss it!!||assets/images/concierto-fun.jpg",
+    "album": "16/09/2022 - Album release||At last, we finally released our first album \"Tago Mago\". It's been a long endeavour, and we surely have learned a lot in the process. We are proud of this record, and hope you enjoy listening to it as much as we did making it!||assets/images/tagomagic.jpg", 
+    "myway": "22/07/2022 - Second single \"My Way\" release||After the release of our first single, we want to share with you all another part of our project, this is \"My Way\". You can listen to My Way on our music section, or find it in Spotify and your favorite platform. Check it out!||assets/images/myway.jpeg",
+    "freedom": "10/06/2022 - First single \"Freedom\" release||After a long delay, we have finally published the first single from our upcoming album. You can listen to Freedom on our music section, or find it in Spotify and your favorite platform. Check it out!||assets/images/freedom.png",
     "new_record": "20/09/2021 - New record almost finished||We are working in the last touches to finish our first record, which will see the light of day during next year. Stay tuned!||",
-    "gig1": "21/02/2020 - Gig at the Hollander (Seville)||We will be playing our first gig along Surya at the Hollander in Seville.||hollander.jpeg"
+    "gig1": "21/02/2020 - Gig at the Hollander (Seville)||We will be playing our first gig along Surya at the Hollander in Seville.||assets/images/hollander.jpeg"
   },
   "moreNews_text": "MORE NEWS",
   "resetNews_text": "CLOSE NEWS",
@@ -73,9 +73,9 @@
       "Instagram:": "@tagomagoband||https://www.instagram.com/tagomagoband"
     }
   },
-  "yt_video_img": "yt_video.gif",
-  "yt_img": "yt.gif",
-  "spoti_img": "spoti.gif",
-  "apple_img": "apple.gif",
+  "yt_video_img": "assets/images/yt_video.gif",
+  "yt_img": "assets/images/yt.gif",
+  "spoti_img": "assets/images/spoti.gif",
+  "apple_img": "assets/images/apple.gif",
   "copy_text": "Made with love by Tago Mago 🖤"
 }

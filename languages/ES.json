@@ -4,9 +4,9 @@
   "navPage_news_link": "NOTICIAS",
   "navPage_history_link": "HISTORIA",
   "navPage_contact_link": "CONTACTO",
-  "menu_img": "menu2.gif",
-  "logo_img": "logo2.png",
-  "fatmusik_img": "fatmusik.gif",
+  "menu_img": "assets/images/menu2.gif",
+  "logo_img": "assets/images/logo2.png",
+  "fatmusik_img": "assets/images/fatmusik.gif",
   "gigs_title_text": "CONCIERTOS",
   "ul_gigs": {
     "gig1": {
@@ -50,15 +50,15 @@
   },
   "news_title_text": "NOTICIAS",
   "news_content": {
-    "new-logos": "25/03/2023||Le hemos dado un lavado de cara a nuestro logo y añadido un poco de color... ¿Qué pensáis?||new-logos.jpg",
-    "gig4": "15/01/2023||Nuestro próximo concierto será el 17 de febrero en la sala Even con nuestros colegas Bleem...||concierto-even.jpg",
-    "gig3": "21/11/2022||Estaremos tocando el 29 de enero con Habitantes de Nadie, Southchild y Flxwxrs en la sala Fanatic como parte de la Incubadora.||concierto-fanatic-incu.jpg",
-    "gig2": "20/09/2022||El 10 de octubre estaremos presentanddo nuestro nuevo disco... ¡No os lo perdáis!||concierto-fun.jpg",
-    "album": "16/09/2022 - Lanzamiento del álbum||Finalmente hemos lanzado nuestro primer álbum \"Tago Mago\". Ha sido un esfuerzo importante, y hemos aprendido mucho durante el proceso. Estamos orgullosos de lo que hemos conseguido, y esperamos que disfrutéis escuchándolo tanto como nosotros lo hicimos creándolo.||tagomagic.jpg", 
-    "myway": "22/07/2022 - Lanzamiento del segundo single, \"My Way\"||Después del lanzamiento de nuestro primer single, queremos compartir con vosotros otra parte de nuestro proyecto, esto es \"My Way\". Puedes escuchar My Way en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||myway.jpeg",
-    "freedom": "10/06/2022 - Primer single \"Freedom\"||Después de un largo retraso, hemos publicado el primer single de nuestro próximo álbum. Puedes escuchar Freedom en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||freedom.png",
+    "new-logos": "25/03/2023||Le hemos dado un lavado de cara a nuestro logo y añadido un poco de color... ¿Qué pensáis?||assets/images/new-logos.jpg",
+    "gig4": "15/01/2023||Nuestro próximo concierto será el 17 de febrero en la sala Even con nuestros colegas Bleem...||assets/images/concierto-even.jpg",
+    "gig3": "21/11/2022||Estaremos tocando el 29 de enero con Habitantes de Nadie, Southchild y Flxwxrs en la sala Fanatic como parte de la Incubadora.||assets/images/concierto-fanatic-incu.jpg",
+    "gig2": "20/09/2022||El 10 de octubre estaremos presentanddo nuestro nuevo disco... ¡No os lo perdáis!||assets/images/concierto-fun.jpg",
+    "album": "16/09/2022 - Lanzamiento del álbum||Finalmente hemos lanzado nuestro primer álbum \"Tago Mago\". Ha sido un esfuerzo importante, y hemos aprendido mucho durante el proceso. Estamos orgullosos de lo que hemos conseguido, y esperamos que disfrutéis escuchándolo tanto como nosotros lo hicimos creándolo.||assets/images/tagomagic.jpg", 
+    "myway": "22/07/2022 - Lanzamiento del segundo single, \"My Way\"||Después del lanzamiento de nuestro primer single, queremos compartir con vosotros otra parte de nuestro proyecto, esto es \"My Way\". Puedes escuchar My Way en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||assets/images/myway.jpeg",
+    "freedom": "10/06/2022 - Primer single \"Freedom\"||Después de un largo retraso, hemos publicado el primer single de nuestro próximo álbum. Puedes escuchar Freedom en nuestra sección de música o encontrarlo en Spotify y tu plataforma favorita. Échale un ojo!||assets/images/freedom.png",
     "new_record": "20/09/2021 - La grabación casi ha terminado||Estamos trabajando en finalizar los detalles de nuestro primer trabajo, que verá la luz del día a partir del año que viene. Stay tuned!||",
-    "gig1": "21/02/2020 - Concierto en la Sala Hollander (Sevilla)||Estaremos tocando en nuestro primer concierto junto a Surya en la Sala Hollander en Sevilla.||hollander.jpeg"
+    "gig1": "21/02/2020 - Concierto en la Sala Hollander (Sevilla)||Estaremos tocando en nuestro primer concierto junto a Surya en la Sala Hollander en Sevilla.||assets/images/hollander.jpeg"
   },
   "moreNews_text": "MÁS NOTICIAS",
   "resetNews_text": "CERRAR NOTICIAS",
@@ -73,9 +73,9 @@
       "Instagram:": "@tagomagoband||https://www.instagram.com/tagomagoband"
     }
   },
-  "yt_video_img": "yt_video.gif",
-  "yt_img": "yt.gif",
-  "spoti_img": "spoti.gif",
-  "apple_img": "apple.gif",
+  "yt_video_img": "assets/images/yt_video.gif",
+  "yt_img": "assets/images/yt.gif",
+  "spoti_img": "assets/images/spoti.gif",
+  "apple_img": "assets/images/apple.gif",
   "copy_text": "Hecho con amor por Tago Mago 🖤"
 }
