@@ -294,17 +294,17 @@ window.onload = () => {
             }
             if (ulId == 'gigs') {
               span2.classList.add('rightGig');
-              if (new Date(value1) < new Date()) {
-                const day = new Date(span2.innerText).getDate().toString().length > 1 ? new Date(span2.innerText).getDate() : '0' + new Date(span2.innerText).getDate();
-                const month = (new Date(span2.innerText).getMonth() + 1).toString().length > 1 ? (new Date(span2.innerText).getMonth() + 1) : '0' + (new Date(span2.innerText).getMonth() + 1);
-                span2.innerText = day + '/' + month + '/' + new Date(span2.innerText).getFullYear();
+              if (new Date(formatDate(value1)) < new Date()) {
+                const day = new Date(formatDate(value1)).getDate().toString().length > 1 ? new Date(formatDate(value1)).getDate() : '0' + new Date(formatDate(value1)).getDate();
+                const month = (new Date(formatDate(value1)).getMonth() + 1).toString().length > 1 ? (new Date(formatDate(value1)).getMonth() + 1) : '0' + (new Date(formatDate(value1)).getMonth() + 1);
+                span2.innerText = day + '/' + month + '/' + new Date(formatDate(value1)).getFullYear();
               }
             } else {
               span2.classList.add('right');
             }
             li.appendChild(span1);
             li.appendChild(span2);
-            if (ulId == 'gigs' && new Date(value1) < new Date()) {
+            if (ulId == 'gigs' && new Date(formatDate(value1)) < new Date()) {
               ulPastGigs.prepend(li);
             } else {
               ul.appendChild(li);
@@ -328,6 +328,27 @@ window.onload = () => {
       }
     });
     
+  }
+
+  const formatDate = date => {
+    const dateSplitted = date.split(' ');
+    const monthsObject = {
+      'ENERO': 'JANUARY',
+      'FEBRERO': 'FEBRUARY',
+      'MARZO': 'MARCH',
+      'ABRIL': 'APRIL',
+      'MAYO': 'MAY',
+      'JUNIO': 'JUNE',
+      'JULIO': 'JULY',
+      'AGOSTO': 'AUGUST',
+      'SEPTIEMBRE': 'SEPTEMBER',
+      'OCTUBRE': 'OCTOBER',
+      'NOVIEMBRE': 'NOVEMBER',
+      'DICIEMBRE': 'DECEMBER'
+    }
+    const month = monthsObject[dateSplitted[1]] == undefined ? dateSplitted[1] : monthsObject[dateSplitted[1]];
+    date = dateSplitted[0] + ' ' + month + ' ' + dateSplitted[2];
+    return date;
   }
 
 }
