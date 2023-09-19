@@ -10,31 +10,40 @@
   "gigs_title_text": "GIGS",
   "ul_gigs": {
     "gig1": {
-      "Vackstage||https://vackstage.com/event/tago-mago-c98": "25 SEPTEMBER 2022"
+      "Sala Hollander": "21 FEBRUARY 2020"
     },
     "gig2": {
-      "Fun Club": "01 OCTOBER 2022"
+      "Vackstage||https://vackstage.com/event/tago-mago-c98": "25 SEPTEMBER 2022"
     },
     "gig3": {
-      "Sala Fanatic": "27 NOVEMBER 2022"
+      "Fun Club": "01 OCTOBER 2022"
     },
     "gig4": {
-      "Sala Even": "17 FEBRUARY 2023"
+      "Sala Fanatic": "29 JANUARY 2022"
     },
     "gig5": {
-      "Tokatu": "06 MAY 2023"
+      "Día de la Marmota": "05 FEBRUARY 2023"
     },
     "gig6": {
-      "Pachamama Rock": "13 MAY 2023"
+      "Sala Even": "17 FEBRUARY 2023"
     },
     "gig7": {
-      "Gallo Rojo (Salón de los Artistas)||https://www.instagram.com/p/CtB_iAUMNj5/": "14 MAY 2023"
+      "Tokatu": "06 MAY 2023"
     },
     "gig8": {
-      "Pachamama Rock (Final)||https://www.youtube.com/live/QjxRONKKpFA?feature=share&t=7795": "27 MAY 2023"
+      "Pachamama Rock": "13 MAY 2023"
     },
     "gig9": {
+      "Gallo Rojo (Salón de los Artistas)||https://www.instagram.com/p/CtB_iAUMNj5/": "14 MAY 2023"
+    },
+    "gig10": {
+      "Pachamama Rock (Final)||https://www.youtube.com/live/QjxRONKKpFA?feature=share&t=7795": "27 MAY 2023"
+    },
+    "gig11": {
       "Bar Mutante": "30 JUNE 2023"
+    },
+    "gig12": {
+      "Final Concurso de Bandas de Rock Bellavista": "16 JUNE 2023"
     }
   },
   "spotify_title_text": "SPOTIFY",
